@@ -33,4 +33,6 @@ jobs:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           command: deploy
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          vars: |
+            R2_BUCKETS=${{ vars.R2EXPLORER_BUCKETS }}
           workingDirectory: "packages/github-action"
