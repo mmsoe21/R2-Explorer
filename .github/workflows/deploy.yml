@@ -31,8 +31,6 @@ jobs:
         uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
-          command: deploy
+          command: deploy --var R2_BUCKETS:${{ vars.R2EXPLORER_BUCKETS }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          vars: |
-            R2_BUCKETS=${{ vars.R2EXPLORER_BUCKETS }}
           workingDirectory: "packages/github-action"
